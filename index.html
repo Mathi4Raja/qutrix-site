@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUTRIX 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .colorful-text span {
+        animation: colorChange 4s infinite ease-in-out;
+      }
+      .colorful-text span:nth-child(1) { animation-delay: 0s; }
+      .colorful-text span:nth-child(2) { animation-delay: 0.2s; }
+      .colorful-text span:nth-child(3) { animation-delay: 0.4s; }
+      .colorful-text span:nth-child(4) { animation-delay: 0.6s; }
+      .colorful-text span:nth-child(5) { animation-delay: 0.8s; }
+      .colorful-text span:nth-child(6) { animation-delay: 1s; }
+      .colorful-text span:nth-child(7) { animation-delay: 1.2s; }
+
+      @keyframes colorChange {
+        0%   { color: #facc15; }
+        25%  { color: #fb923c; }
+        50%  { color: #818cf8; }
+        75%  { color: #4ade80; }
+        100% { color: #facc15; }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 min-h-screen font-sans flex flex-col">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur shadow z-50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-row items-center justify-between gap-2">
+        <!-- Logo and College Info -->
+        <div class="flex items-center min-w-0 flex-1">
+          <a href="https://www.gascgobi.ac.in/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/gobi-arts-science-logo.png" alt="Gobi Arts & Science College Logo" class="h-12 w-auto flex-shrink-0">
+          </a>
+          <div class="ml-4 text-left min-w-0 flex-1 truncate">
+            <span class="block text-xs font-bold leading-tight text-gray-800 truncate">GOBI ARTS & SCIENCE COLLEGE</span>
+            <span class="block text-[0.65rem] text-gray-600 truncate">Karattadipalayam, Gobichettipalayam - 638 453.</span>
+            <span class="block text-[0.6rem] text-gray-500 truncate">(Govt.Aided Autonomous Co-educational Institution, Affiliated to Bharathiar University, Coimbatore)</span>
+          </div>
+        </div>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-6 text-sm font-semibold">
+          <a href="#home" class="hover:text-purple-600">Home</a>
+          <a href="events.html" class="hover:text-purple-600">Events</a>
+          <a href="about.html" class="hover:text-purple-600">About</a>
+          <a href="contact.html" class="hover:text-purple-600">Contact</a>
+          <a href="note-from-dev.html" class="bg-purple-500 text-white px-4 py-1 rounded hover:bg-purple-600">Note from Dev</a>
+        </nav>
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden text-xl ml-4 flex-shrink-0" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      </div>
+      <div id="mobileMenu" class="hidden flex-col px-6 pb-4 space-y-3 text-sm">
+        <a href="#home" class="hover:text-purple-600">Home</a>
+        <a href="events.html" class="hover:text-purple-600">Events</a>
+        <a href="about.html" class="hover:text-purple-600">About</a>
+        <a href="contact.html" class="hover:text-purple-600">Contact</a>
+        <a href="note-from-dev.html" class="bg-purple-500 text-white px-3 py-1 rounded hover:bg-purple-600 text-center">Note from Dev</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 text-center flex-1 w-full">
+      <h1 class="text-5xl md:text-6xl font-extrabold colorful-text">
+        <span>Q</span><span>U</span><span>T</span><span>R</span><span>I</span><span>X</span>
+      </h1>
+      <p class="text-xl mt-4 italic">Decode. Design. Dominate.</p>
+      <div class="flex justify-center mt-4">
+        <img src="assets/poster.png" alt="Event Poster" class="max-h-80 w-auto rounded-[1rem] shadow-lg border-4 border-gray-200 md:max-h-[22rem] lg:max-h-[32rem]" style="box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);" />
+      </div>
+      <p class="mt-2 text-sm text-gray-600">August 24, 2025 • D Block Auditorium, Gobi Arts & Science College</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="events.html" class="bg-yellow-400 px-4 py-2 rounded text-white font-semibold shadow hover:bg-yellow-500">Explore Events</a>
+        <a href="#Agenda" class="bg-purple-600 px-4 py-2 rounded text-white font-semibold shadow hover:bg-purple-700">Agenda</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-4 text-center text-sm w-full">
+      <div class="mb-4 text-xs text-gray-700 leading-relaxed" style="margin-bottom:0rem;">
+        <strong>Contact Us</strong><br>
+        Dr. P. Prabhusundhar, Assistant Professor<br>
+        GAIT Co-ordinator, Department of Computer Science,<br>
+        Gobi Arts & Science College (Autonomous),<br>
+        Contact No: <a href="tel:9600877997" class="text-purple-700 hover:underline">96008 77997</a>.<br>
+        ~Vibe Coded by Mr. Mathiraja~
+      </div>
+    </section>
+
+    <!-- Agenda Modal -->
+    <div id="agendaModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+      <div class="bg-white rounded-2xl shadow-xl w-full max-w-2xl mx-2 sm:mx-4 p-2 sm:p-6 relative animate-fade-in max-h-[90vh] overflow-y-auto">
+        <button id="closeAgenda" class="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-400 hover:text-purple-600 text-2xl font-bold">&times;</button>
+        <h2 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-center text-purple-700">QUTRIX-2K25 Time Schedule</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-gray-300 rounded-lg text-xs sm:text-sm">
+            <thead class="bg-purple-100">
+              <tr>
+                <th class="px-2 sm:px-3 py-2 border-b border-gray-300">Time</th>
+                <th class="px-2 sm:px-3 py-2 border-b border-gray-300">Event</th>
+                <th class="px-2 sm:px-3 py-2 border-b border-gray-300">Venue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="px-3 py-2 border-b">08:00 am - 09:00 am</td><td class="px-3 py-2 border-b">Registration</td><td class="px-3 py-2 border-b">Front side of KMR Auditorium</td></tr>
+              <tr><td class="px-3 py-2 border-b">09:00 am - 09:10 am</td><td class="px-3 py-2 border-b">Inauguration</td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">09:15 am - 10:15 am</td><td class="px-3 py-2 border-b font-bold">Paper presentation <span class='text-xs'>(FINALS)</span></td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">10:20 am – 10:50 am</td><td class="px-3 py-2 border-b">Quiz (prelims)</td><td class="px-3 py-2 border-b">KMR Auditorium</td></tr>
+              <tr><td class="px-3 py-2 border-b">10:20 am – 10:50 am</td><td class="px-3 py-2 border-b">Web Design (prelims)</td><td class="px-3 py-2 border-b">KMR Auditorium</td></tr>
+              <tr><td class="px-3 py-2 border-b">10:30 am – 12:15 pm</td><td class="px-3 py-2 border-b font-bold">Dance <span class='text-xs'>(FINALS)</span></td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">10:50 am – 11:10 am</td><td class="px-3 py-2 border-b font-bold">REFRESHMENT</td><td class="px-3 py-2 border-b">Front side of ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">11:15 am – 11:45 am</td><td class="px-3 py-2 border-b">Marketing (prelims)</td><td class="px-3 py-2 border-b">KMR Auditorium</td></tr>
+              <tr><td class="px-3 py-2 border-b">11:45 am – 12:15 pm</td><td class="px-3 py-2 border-b">Software contest (prelims)</td><td class="px-3 py-2 border-b">Lab-II</td></tr>
+              <tr><td class="px-3 py-2 border-b">11:45 am – 12:15 pm</td><td class="px-3 py-2 border-b">Word Hunt (prelims)</td><td class="px-3 py-2 border-b">KMR Auditorium</td></tr>
+              <tr><td class="px-3 py-2 border-b">12:15 pm – 01:00 pm</td><td class="px-3 py-2 border-b font-bold">LUNCH</td><td class="px-3 py-2 border-b"></td></tr>
+              <tr><td class="px-3 py-2 border-b">01:00 pm – 02:00 pm</td><td class="px-3 py-2 border-b">Quiz (Finals)</td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">01:00 pm – 02:00 pm</td><td class="px-3 py-2 border-b">Web Design (Finals)</td><td class="px-3 py-2 border-b">Lab-II</td></tr>
+              <tr><td class="px-3 py-2 border-b">02:00 pm – 03:00 pm</td><td class="px-3 py-2 border-b">Word Hunt (Finals)</td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">02:00 pm – 03:00 pm</td><td class="px-3 py-2 border-b">Software Contest (Finals)</td><td class="px-3 py-2 border-b">Lab-II</td></tr>
+              <tr><td class="px-3 py-2 border-b">03:00 pm – 04:00 pm</td><td class="px-3 py-2 border-b">Marketing (Finals)</td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+              <tr><td class="px-3 py-2 border-b">04:00 pm – 05:00 pm</td><td class="px-3 py-2 border-b font-bold">Valediction</td><td class="px-3 py-2 border-b">ARS Hall</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      const mobileLinks = menu.querySelectorAll("a");
+      menuBtn.onclick = () => {
+        menu.classList.toggle("hidden");
+        if (!menu.classList.contains("hidden")) {
+          menu.classList.add("flex");
+        } else {
+          menu.classList.remove("flex");
+        }
+        // Toggle aria-expanded attribute
+        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", (!expanded).toString());
+      };
+      // Close menu on link click (mobile only)
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768 && !menu.classList.contains("hidden")) {
+            menu.classList.add("opacity-0");
+            setTimeout(() => {
+              menu.classList.add("hidden");
+              menu.classList.remove("flex", "opacity-0");
+              menuBtn.setAttribute("aria-expanded", "false");
+            }, 250); // match transition duration
+          }
+        });
+      });
+
+      // Agenda modal logic
+      const agendaBtn = document.querySelectorAll('a[href="#register"], a[href="#Agenda"]');
+      const agendaModal = document.getElementById('agendaModal');
+      const closeAgenda = document.getElementById('closeAgenda');
+      agendaBtn.forEach(btn => btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        agendaModal.classList.remove('hidden');
+      }));
+      closeAgenda.addEventListener('click', function() {
+        agendaModal.classList.add('hidden');
+      });
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') agendaModal.classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>

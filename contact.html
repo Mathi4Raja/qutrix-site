@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUTRIX 2025 - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 min-h-screen font-sans flex flex-col">
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur shadow z-50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-row items-center justify-between gap-2">
+        <!-- Logo and College Info -->
+        <div class="flex items-center min-w-0 flex-1">
+          <a href="https://www.gascgobi.ac.in/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/gobi-arts-science-logo.png" alt="Gobi Arts & Science College Logo" class="h-12 w-auto flex-shrink-0">
+          </a>
+          <div class="ml-4 text-left min-w-0 flex-1 truncate">
+            <span class="block text-xs font-bold leading-tight text-gray-800 truncate">GOBI ARTS & SCIENCE COLLEGE</span>
+            <span class="block text-[0.65rem] text-gray-600 truncate">Karattadipalayam, Gobichettipalayam - 638 453.</span>
+            <span class="block text-[0.6rem] text-gray-500 truncate">(Govt.Aided Autonomous Co-educational Institution, Affiliated to Bharathiar University, Coimbatore)</span>
+          </div>
+        </div>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-6 text-sm font-semibold ml-4">
+          <a href="index.html#home" class="hover:text-purple-600">Home</a>
+          <a href="events.html" class="hover:text-purple-600">Events</a>
+          <a href="about.html" class="hover:text-purple-600">About</a>
+          <a href="contact.html" class="hover:text-purple-600 font-bold">Contact</a>
+          <a href="note-from-dev.html" class="bg-purple-500 text-white px-4 py-1 rounded hover:bg-purple-600">Note from Dev</a>
+        </nav>
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden text-xl ml-4 flex-shrink-0" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      </div>
+      <div id="mobileMenu" class="hidden flex-col px-6 pb-4 space-y-3 text-sm">
+        <a href="index.html#home" class="hover:text-purple-600">Home</a>
+        <a href="events.html" class="hover:text-purple-600">Events</a>
+        <a href="about.html" class="hover:text-purple-600">About</a>
+        <a href="contact.html" class="hover:text-purple-600 font-bold">Contact</a>
+        <a href="note-from-dev.html" class="bg-purple-500 text-white px-3 py-1 rounded hover:bg-purple-600 text-center">Note from Dev</a>
+      </div>
+    </header>
+    <main class="pt-28 pb-20 px-4 max-w-2xl mx-auto flex-1 w-full">
+      <h2 class="text-3xl font-bold text-center mb-8">Contact</h2>
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md">
+        <p class="mb-4 text-center text-lg font-semibold text-purple-700">Gobi Arts & Science College | Intercollegiate Meet 2025</p>
+        <div class="mb-4">
+          <h3 class="font-bold text-gray-800 mb-1">Event Coordinators</h3>
+          <ul class="text-gray-700 text-sm space-y-1">
+            <li>Prof. R. Meena – meena@techarts.edu</li>
+            <li>Prof. D. Arjun – arjun@techarts.edu</li>
+            <li>Prof. S. Kavitha – kavitha@techarts.edu</li>
+            <li>Prof. V. Hari – hari@techarts.edu</li>
+            <li>Prof. A. Naveen – naveen@techarts.edu</li>
+            <li>Prof. L. Priya – priya@techarts.edu</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <h3 class="font-bold text-gray-800 mb-1">General Queries</h3>
+          <ul class="text-gray-700 text-sm space-y-1">
+            <li>Email: info@techarts.edu</li>
+            <li>Phone: +91 98765 43210</li>
+          </ul>
+        </div>
+        <div class="text-center text-xs text-gray-500 mt-6">Developed by Mathi Raja</div>
+      </div>
+    </main>
+    <footer class="bg-gray-100 py-4 text-center text-sm mt-10 w-full">
+      <div class="mb-4 text-xs text-gray-700 leading-relaxed" style="margin-bottom:0rem;">
+        <strong>Contact Us</strong><br>
+        Dr. P. Prabhusundhar, Assistant Professor<br>
+        GAIT Co-ordinator, Department of Computer Science,<br>
+        Gobi Arts & Science College (Autonomous),<br>
+        Contact No: <a href="tel:9600877997" class="text-purple-700 hover:underline">96008 77997</a>.<br>
+        ~Vibe Coded by Mr. Mathiraja~
+      </div>
+    </footer>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      menuBtn.onclick = () => {
+        menu.classList.toggle("hidden");
+        if (!menu.classList.contains("hidden")) {
+          menu.classList.add("flex");
+        } else {
+          menu.classList.remove("flex");
+        }
+        // Toggle aria-expanded attribute
+        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", (!expanded).toString());
+      };
+      // Close menu on link click (mobile only)
+      menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768 && !menu.classList.contains("hidden")) {
+            menu.classList.add("opacity-0");
+            setTimeout(() => {
+              menu.classList.add("hidden");
+              menu.classList.remove("flex", "opacity-0");
+              menuBtn.setAttribute("aria-expanded", "false");
+            }, 250);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

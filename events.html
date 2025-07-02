@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUTRIX 2025 - Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-yellow-100 via-pink-100 to-purple-100 min-h-screen font-sans flex flex-col">
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-80 backdrop-blur shadow z-50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-row items-center justify-between gap-2">
+        <!-- Logo and College Info -->
+        <div class="flex items-center min-w-0 flex-1">
+          <a href="https://www.gascgobi.ac.in/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/gobi-arts-science-logo.png" alt="Gobi Arts & Science College Logo" class="h-12 w-auto flex-shrink-0">
+          </a>
+          <div class="ml-4 text-left min-w-0 flex-1 truncate">
+            <span class="block text-xs font-bold leading-tight text-gray-800 truncate">GOBI ARTS & SCIENCE COLLEGE</span>
+            <span class="block text-[0.65rem] text-gray-600 truncate">Karattadipalayam, Gobichettipalayam - 638 453.</span>
+            <span class="block text-[0.6rem] text-gray-500 truncate">(Govt.Aided Autonomous Co-educational Institution, Affiliated to Bharathiar University, Coimbatore)</span>
+          </div>
+        </div>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-6 text-sm font-semibold ml-4">
+          <a href="index.html#home" class="hover:text-purple-600">Home</a>
+          <a href="events.html#events" class="hover:text-purple-600 font-bold">Events</a>
+          <a href="about.html" class="hover:text-purple-600">About</a>
+          <a href="contact.html" class="hover:text-purple-600">Contact</a>
+          <a href="note-from-dev.html" class="bg-purple-500 text-white px-4 py-1 rounded hover:bg-purple-600">Note from Dev</a>
+        </nav>
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden text-xl ml-4 flex-shrink-0" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      </div>
+      <div id="mobileMenu" class="hidden flex-col px-6 pb-4 space-y-3 text-sm">
+        <a href="index.html#home" class="hover:text-purple-600">Home</a>
+        <a href="events.html#events" class="hover:text-purple-600 font-bold">Events</a>
+        <a href="about.html" class="hover:text-purple-600">About</a>
+        <a href="contact.html" class="hover:text-purple-600">Contact</a>
+        <a href="note-from-dev.html" class="bg-purple-500 text-white px-3 py-1 rounded hover:bg-purple-600 text-center">Note from Dev</a>
+      </div>
+    </header>
+    <main class="pt-28 pb-20 px-4 max-w-5xl mx-auto flex-1 w-full">
+      <h2 class="text-3xl font-bold text-center mb-8">Events</h2>
+      <div class="grid md:grid-cols-2 gap-6 items-stretch">
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Word Hunt</h3>
+          <p class="text-sm italic mb-2">"Find it before it’s gone!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>2 Rounds: Puzzle + Rapid-Fire</li>
+            <li>Solo or Duo Teams</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. R. Meena – meena@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('wordhunt')">Register</button>
+        </div>
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Quiz</h3>
+          <p class="text-sm italic mb-2">"Only the sharpest survive!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>3 Rounds • Teams of 2</li>
+            <li>Tech + General knowledge</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. D. Arjun – arjun@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('quiz')">Register</button>
+        </div>
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Marketing</h3>
+          <p class="text-sm italic mb-2">"Sell the unsellable!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>Ad campaigns • Product Pitching</li>
+            <li>Scored on creativity</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. S. Kavitha – kavitha@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('marketing')">Register</button>
+        </div>
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Web Design</h3>
+          <p class="text-sm italic mb-2">"Code your canvas!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>1.5 hrs • Theme on the spot</li>
+            <li>Mobile-responsive bonus</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. V. Hari – hari@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('webdesign')">Register</button>
+        </div>
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Paper Presentation</h3>
+          <p class="text-sm italic mb-2">"Speak Science, Inspire Innovation!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>Abstract + 7-minute talk</li>
+            <li>CS Topics allowed</li>
+            <li>Presentations should be sent to us early AP</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. A. Naveen – naveen@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('paper')">Register</button>
+        </div>
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Software Contest</h3>
+          <p class="text-sm italic mb-2">"Build. Present. Impress!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>Team of up to 3 members</li>
+            <li>Develop a software</li>
+            <li>10-minute demo + Q&A</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. L. Priya – priya@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('software')">Register</button>
+        </div>
+        <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-md hover:shadow-lg transition md:col-span-2 md:flex md:flex-col md:items-center flex flex-col h-full">
+          <h3 class="text-xl font-semibold mb-1">Dance</h3>
+          <p class="text-sm italic mb-2">"Move to the rhythm!"</p>
+          <ul class="text-sm text-gray-700 list-disc pl-5">
+            <li>Solo or Group Performance</li>
+            <li>Max 5 minutes per team</li>
+            <li>Any dance style allowed</li>
+          </ul>
+          <p class="mt-2 text-sm text-gray-600">Faculty: Prof. L. Priya – priya@techarts.edu</p>
+          <p class="mt-1 text-xs text-gray-500">Student: S. Priya – 98765 12345</p>
+          <p class="mt-1 text-xs text-gray-500">Student: K. Arun – 98765 54321</p>
+          <button class="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition" onclick="openModal('dance')">Register</button>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-gray-100 py-4 text-center text-sm mt-10 w-full">
+      <div class="mb-4 text-xs text-gray-700 leading-relaxed" style="margin-bottom:0rem;">
+        <strong>Contact Us</strong><br>
+        Dr. P. Prabhusundhar, Assistant Professor<br>
+        GAIT Co-ordinator, Department of Computer Science,<br>
+        Gobi Arts & Science College (Autonomous),<br>
+        Contact No: <a href="tel:9600877997" class="text-purple-700 hover:underline">96008 77997</a>.<br>
+        ~Vibe Coded by Mr. Mathiraja~
+      </div>
+    </footer>
+    <!-- Event Modals -->
+    <div id="modal-bg" class="fixed inset-0 bg-black bg-opacity-40 z-50 hidden"></div>
+    <div id="wordhunt-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('wordhunt')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Word Hunt Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Teams of 1-2. No use of mobile phones or external help.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('wordhunt')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('wordhunt')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div id="quiz-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('quiz')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Quiz Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Teams of 2. No electronic devices allowed. Tie-breakers at judges' discretion.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('quiz')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('quiz')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div id="marketing-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('marketing')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Marketing Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Teams of up to 3. Props allowed. Time limit strictly enforced.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('marketing')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('marketing')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div id="webdesign-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('webdesign')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Web Design Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Solo. Only provided systems and software to be used.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('webdesign')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('webdesign')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div id="paper-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('paper')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Paper Presentation Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Solo. Abstract must be submitted in advance. Plagiarism will lead to disqualification.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('paper')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('paper')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div id="software-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('software')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Software Contest Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Teams of up to 3. Bring your own laptop if required. Demo must be live.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('software')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('software')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <div id="dance-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="bg-white rounded-xl shadow-lg max-w-md w-full mx-4 p-6 relative animate-fade-in">
+        <button class="absolute top-2 right-3 text-2xl text-gray-400 hover:text-purple-600 font-bold" onclick="closeModal('dance')">&times;</button>
+        <h4 class="text-xl font-bold mb-2 text-purple-700">Dance Rules</h4>
+        <ul class="list-disc pl-5 text-gray-700 text-sm mb-6">
+          <li>Solo or group (max 5 per team). No inappropriate content. Props allowed.</li>
+        </ul>
+        <div class="flex justify-end gap-3 mt-6">
+          <button class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300" onclick="closeModal('dance')">Cancel</button>
+          <button class="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600" onclick="closeModal('dance')">Continue</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      // Add transition classes for smooth open/close
+      menu.classList.add("transition-all", "duration-300", "ease-in-out");
+      menuBtn.onclick = () => {
+        menu.classList.toggle("hidden");
+        if (!menu.classList.contains("hidden")) {
+          menu.classList.add("flex", "opacity-100", "scale-100");
+          menu.classList.remove("opacity-0", "scale-95");
+        } else {
+          menu.classList.remove("flex", "opacity-100", "scale-100");
+          menu.classList.add("opacity-0", "scale-95");
+        }
+        // Toggle aria-expanded attribute
+        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", (!expanded).toString());
+      };
+      // Close menu on link click (mobile only)
+      menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768 && !menu.classList.contains("hidden")) {
+            menu.classList.add("opacity-0", "scale-95");
+            setTimeout(() => {
+              menu.classList.add("hidden");
+              menu.classList.remove("flex", "opacity-100", "scale-100", "opacity-0", "scale-95");
+              menuBtn.setAttribute("aria-expanded", "false");
+            }, 300);
+          }
+        });
+      });
+      // Modal logic for event rules
+      function openModal(event) {
+        document.getElementById('modal-bg').classList.remove('hidden');
+        document.getElementById(event+'-modal').classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+      function closeModal(event) {
+        document.getElementById('modal-bg').classList.add('hidden');
+        document.getElementById(event+'-modal').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+      // Close modal on background click
+      document.getElementById('modal-bg').onclick = function() {
+        const modals = ['wordhunt','quiz','marketing','webdesign','paper','software','dance'];
+        modals.forEach(m => document.getElementById(m+'-modal').classList.add('hidden'));
+        this.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      };
+    </script>
+  </body>
+</html>
