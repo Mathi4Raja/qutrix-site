@@ -266,7 +266,7 @@
           </div>
           <div id="wordhunt-step-3" class="step hidden">
             <input type="text" name="event" value="Word Hunt" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-wordhunt" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'wordhunt')" />
               <div id="idcard-preview-wordhunt" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-wordhunt" class="text-green-600 text-xs mt-1"></div>
@@ -311,7 +311,7 @@
           </div>
           <div id="quiz-step-3" class="step hidden">
             <input type="text" name="event" value="Quiz" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-quiz" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'quiz')" />
               <div id="idcard-preview-quiz" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-quiz" class="text-green-600 text-xs mt-1"></div>
@@ -356,7 +356,7 @@
           </div>
           <div id="marketing-step-3" class="step hidden">
             <input type="text" name="event" value="Marketing" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-marketing" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'marketing')" />
               <div id="idcard-preview-marketing" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-marketing" class="text-green-600 text-xs mt-1"></div>
@@ -401,7 +401,7 @@
           </div>
           <div id="webdesign-step-3" class="step hidden">
             <input type="text" name="event" value="Web Design" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-webdesign" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'webdesign')" />
               <div id="idcard-preview-webdesign" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-webdesign" class="text-green-600 text-xs mt-1"></div>
@@ -450,7 +450,7 @@
           </div>
           <div id="paper-step-3" class="step hidden">
             <input type="text" name="event" value="Paper Presentation" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-paper" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'paper')" />
               <div id="idcard-preview-paper" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-paper" class="text-green-600 text-xs mt-1"></div>
@@ -495,7 +495,7 @@
           </div>
           <div id="software-step-3" class="step hidden">
             <input type="text" name="event" value="Software Contest" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-software" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'software')" />
               <div id="idcard-preview-software" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-software" class="text-green-600 text-xs mt-1"></div>
@@ -552,7 +552,7 @@
           </div>
           <div id="dance-step-3" class="step hidden">
             <input type="text" name="event" value="Dance" readonly class="w-full border rounded px-3 py-2 bg-gray-100 cursor-not-allowed mb-2" />
-            <label class="block text-sm text-gray-600">Student ID card (img/pdf)
+            <label class="block text-sm text-gray-600">Student ID card (img/pdf) <span class="text-gray-400 italic">(optional)</span>
               <input type="file" name="idcard" id="idcard-dance" accept="image/*,application/pdf" multiple class="block mt-1" onchange="handleFileUpload(event, 'dance')" />
               <div id="idcard-preview-dance" class="mt-2 flex flex-wrap gap-2"></div>
               <div id="idcard-success-dance" class="text-green-600 text-xs mt-1"></div>
@@ -815,8 +815,6 @@
           // Update info on change
           input.addEventListener('change', function() {
             if (input.files.length === 0) {
-             
-
               info.textContent = '';
             } else if (input.files.length === 1) {
               info.textContent = input.files[0].name;
