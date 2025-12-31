@@ -2,17 +2,12 @@
 
 **Decode. Design. Dominate.**
 
-A vibrant event website for QUTRIX 2025, an intercollegiate computer science meet hosted by Gobi Arts & Science College.
+A vibrant frontend of the event website for QUTRIX 2025, an intercollegiate computer science meet hosted by Gobi Arts & Science College.
 
 ## 🔗 Live Site
 
 Visit the live website: [https://qutrix.free.nf](https://qutrix.free.nf)
 
-## 📅 Event Details
-
-- **Date:** August 24, 2025
-- **Venue:** D Block Auditorium, Gobi Arts & Science College
-- **Location:** Karattadipalayam, Gobichettipalayam - 638 453
 
 ## 🎯 Project Overview
 
@@ -37,18 +32,3 @@ This is a static website built with HTML, CSS, and JavaScript featuring:
 - Tailwind CSS (via CDN)
 - Vanilla JavaScript
 - Responsive Design
-
-## 👨‍💻 Developer
-
-Designed and developed by **Mathiraja**
-
-## 📞 Contact
-
-**Event Coordinator:**  
-Dr. P. Prabhusundhar, Assistant Professor  
-GAIT Co-ordinator, Department of Computer Science  
-Phone: [96008 77997](tel:9600877997)
-
----
-
-© 2025 Gobi Arts & Science College. All rights reserved.
