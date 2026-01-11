@@ -654,9 +654,39 @@
         (idCardFiles[event] || []).forEach(file => {
           formData.append('idcard', file);
         });
-        // ...simulate submission...
-        alert('Registration submitted for ' + event + '!');
-        closeRegistration(event);
+
+        const submitBtn = document.getElementById(event + '-submit-btn');
+        const originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Submitting...';
+        }
+
+        fetch('/api/register', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+          alert('Registration submitted for ' + event + '!');
+          closeRegistration(event);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('There was a problem submitting your registration. Please try again.');
+        })
+        .finally(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+          }
+        });
+
         return false;
       }
       function resetRegistration(event) {
