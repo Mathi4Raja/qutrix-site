@@ -625,14 +625,7 @@
         // Reset form fields
         const form = document.getElementById((event === 'dance' ? 'dance-stepper-form' : event + '-stepper-form'));
         if (form) form.reset();
-        // Clear file previews and file arrays
-        if (idCardFiles[event]) {
-          idCardFiles[event] = [];
-          const preview = document.getElementById('idcard-preview-' + event);
-          if (preview) preview.innerHTML = '';
-          const success = document.getElementById('idcard-success-' + event);
-          if (success) success.textContent = '';
-        }
+
         // Hide modal
         document.getElementById('modal-bg').classList.add('hidden');
         document.getElementById('registration-' + event).classList.add('hidden');
@@ -660,7 +653,19 @@
         return false;
       }
       function resetRegistration(event) {
-        // Optionally add logic to reset custom fields or show a message
+        // Reset custom fields (file uploads)
+        if (idCardFiles[event]) {
+          idCardFiles[event] = [];
+          const preview = document.getElementById('idcard-preview-' + event);
+          if (preview) preview.innerHTML = '';
+          const success = document.getElementById('idcard-success-' + event);
+          if (success) success.textContent = '';
+        }
+
+        // Reset custom file input info text
+        const info = document.getElementById('idcard-' + event + '-info');
+        if (info) info.textContent = '';
+
         return true;
       }
       // File upload logic for Student ID card (append files up to 5 for dance, 4 for others, ≤10MB each)
