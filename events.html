@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="assets/gobi-arts-science-logo.png">
   <link rel="apple-touch-icon" href="assets/gobi-arts-science-logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/toast.js"></script>
     <style>
       html { scroll-behavior: smooth; }
     </style>
@@ -648,8 +649,8 @@
           formData.append('idcard', file);
         });
         // ...simulate submission...
-        alert('Registration submitted for ' + event + '!');
-        closeRegistration(event);
+        showToast('Registration submitted for ' + event + '!', 'success');
+        setTimeout(function() { closeRegistration(event); }, 1000);
         return false;
       }
       function resetRegistration(event) {
@@ -741,65 +742,6 @@
         // Always clear input after processing
         input.value = '';
       }
-      // Registration form validation (update tooltip and pattern check)
-      document.querySelectorAll('.registration-form').forEach(form => {
-        form.onsubmit = function(ev) {
-          // Team member validation
-          const eventType = form.getAttribute('data-event');
-          if (eventType === 'Dance') {
-            // Only member1 is required, others optional but if name is filled, roll is required and vice versa
-            const m1 = form.querySelector('[name=member1_name]');
-            const m1r = form.querySelector('[name=member1_roll]');
-            if (!m1.value.trim() || !m1r.value.trim()) {
-              alert('Member 1 name and roll number are required.');
-              ev.preventDefault();
-              return false;
-            }
-            for (let i = 2; i <= 5; i++) {
-              const m = form.querySelector(`[name=member${i}_name]`);
-              const mr = form.querySelector(`[name=member${i}_roll]`);
-              if ((m.value.trim() && !mr.value.trim()) || (!m.value.trim() && mr.value.trim())) {
-                alert(`Please fill both name and roll number for member ${i}, or leave both blank.`);
-                ev.preventDefault();
-                return false;
-              }
-            }
-          } else {
-            let memberCount = 2;
-            if (eventType === 'Paper Presentation') memberCount = 3;
-            for (let i = 1; i <= memberCount; i++) {
-              const m = form.querySelector(`[name=member${i}_name]`);
-              const mr = form.querySelector(`[name=member${i}_roll]`);
-              if (!m || !mr || !m.value.trim() || !mr.value.trim()) {
-                alert(`All participant names and roll numbers are mandatory (${memberCount} required).`);
-                ev.preventDefault();
-                return false;
-              }
-            }
-          }
-          // Whatsapp and alternate phone validation
-          const whatsapp = form.querySelector('[name=whatsapp]');
-          const altphone = form.querySelector('[name=altphone]');
-          if (!/^\d{10}$/.test(whatsapp.value)) {
-            whatsapp.setCustomValidity('Enter a 10-digit number');
-            whatsapp.reportValidity();
-            ev.preventDefault();
-            return false;
-          } else {
-            whatsapp.setCustomValidity('');
-          }
-          if (altphone.value && !/^\d{10}$/.test(altphone.value)) {
-            altphone.setCustomValidity('Enter a 10-digit number');
-            altphone.reportValidity();
-            ev.preventDefault();
-            return false;
-          } else {
-            altphone.setCustomValidity('');
-          }
-          // No custom email validation here; browser will handle it
-          return true;
-        };
-      });
       function createCustomFileInput(inputId, event) {
         const input = document.getElementById(inputId);
         if (!input) return;
@@ -883,14 +825,14 @@
           const m1 = form.querySelector('[name=member1_name]');
           const m1r = form.querySelector('[name=member1_roll]');
           if (!m1.value.trim() || !m1r.value.trim()) {
-            alert('Member 1 name and roll number are required.');
+            showToast('Member 1 name and roll number are required.', 'error');
             return;
           }
           for (let i = 2; i <= 5; i++) {
             const m = form.querySelector(`[name=member${i}_name]`);
             const mr = form.querySelector(`[name=member${i}_roll]`);
             if ((m.value.trim() && !mr.value.trim()) || (!m.value.trim() && mr.value.trim())) {
-              alert(`Please fill both name and roll number for member ${i}, or leave both blank.`);
+              showToast(`Please fill both name and roll number for member ${i}, or leave both blank.`, 'error');
               return;
             }
           }
@@ -968,7 +910,7 @@
             const m = form.querySelector(`[name=member${i}_name]`);
             const mr = form.querySelector(`[name=member${i}_roll]`);
             if (!m || !mr || !m.value.trim() || !mr.value.trim()) {
-              alert(`All participant names and roll numbers are mandatory (${memberCount} required).`);
+              showToast(`All participant names and roll numbers are mandatory (${memberCount} required).`, 'error');
               return;
             }
           }
