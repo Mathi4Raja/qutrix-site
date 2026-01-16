@@ -1,3 +1,5 @@
-## 2026-01-13 - Replaced Native Alerts with Custom Toasts
-**Learning:** Native `alert()` calls disrupt the user flow and cannot be styled to match the application's design, leading to a jarring experience. They are blocking and can be annoying for repetitive validation.
-**Action:** Use a non-blocking toast notification system for form validation feedback and success messages. This allows for better styling, consistent branding, and a smoother user experience.
+# Palette's Journal
+
+## 2024-05-22 - Modal Accessibility Patterns
+**Learning:** Even if individual modals have close buttons, users expect the `Escape` key to close any open modal. This is a critical accessibility pattern often missed in custom implementations.
+**Action:** When implementing custom modals, always attach a global `keydown` listener that checks for `Escape` and closes the currently open modal (or all modals).
